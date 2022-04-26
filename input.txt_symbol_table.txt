@@ -1,0 +1,28 @@
+Keywords:
+else : 63
+if : 62
+
+Identifiers:
+asp : 1002
+x : 1000
+
+Operators:
+= : 116
+== : 91
+
+Integer literals:
+101 : 1003
+5 : 1001
+500 : 1004
+
+Float literals:
+
+Delimiters:
+( : 105
+) : 106
+; : 109
+{ : 103
+} : 104
+
+String literals:
+

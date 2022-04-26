@@ -1,0 +1,21 @@
+Keyword token, string: if , line number: 1, token id: 62
+Delimiter token, string: ( , line number: 1, token id: 105
+Identifier token, string: x , line number: 1, token id: 1000
+Operator token, string: == , line number: 1, token id: 91
+Integer literal token, string: 5 , line number: 1, token id: 1001
+Delimiter token, string: ) , line number: 1, token id: 106
+Delimiter token, string: { , line number: 2, token id: 103
+Identifier token, string: asp , line number: 3, token id: 1002
+Operator token, string: = , line number: 3, token id: 116
+Integer literal token, string: 101 , line number: 3, token id: 1003
+Delimiter token, string: ; , line number: 3, token id: 109
+Delimiter token, string: } , line number: 4, token id: 104
+Keyword token, string: else , line number: 5, token id: 63
+Delimiter token, string: { , line number: 6, token id: 103
+Identifier token, string: asp , line number: 7, token id: 1002
+Operator token, string: = , line number: 7, token id: 116
+Integer literal token, string: 500 , line number: 7, token id: 1004
+Delimiter token, string: ; , line number: 7, token id: 109
+*** Invalid token, string: ##asp , at line number: 8 ***
+Delimiter token, string: ; , line number: 8, token id: 109
+Delimiter token, string: } , line number: 9, token id: 104
