@@ -16,7 +16,7 @@ string extract_token(string line)
     {
         if(word=="***")
         {
-            return "\n"+line;
+            return "\n"+line+"\n";
         }
         if(it==true)
         {
