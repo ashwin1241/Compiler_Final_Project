@@ -1,4 +1,4 @@
-call git add .
-call git commit -m "updates"
-call git push beerus master
-call git status
+git add .
+git commit -m "updates"
+git push beerus master
+git status
