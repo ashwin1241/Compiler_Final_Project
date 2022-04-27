@@ -11,9 +11,9 @@ using namespace std;
 map<string,int> token_id,pti;
 ll ctr=1000;
 vector<char> spchar = {'!','%','^','&','*','(',')','-','+','+','{','[','}',']',':',';','/',',','<','>','='};
-vector<string> binop = {"<<",">>","<=",">=","==","+=","-=","*=","/=","!=","&&","||",":=","++","--","//"};
+vector<string> binop = {"<<",">>","<=",">=","==","+=","-=","*=","!=","!=","&&","||",":=","++","--","//"};
 vector<string> delimiter = {"{", "}", "(", ")", "[", "]", ";", ","};
-vector<string> oprator = {"<<",">>","<", ">", "<=", ">=", "*", "+", "-", "/", "=", "-=", "*=", "+=", "/=", "++", "--", "=="};
+vector<string> oprator = {"<<",">>","<", ">", "<=", ">=", "*", "+", "-", "/", "=", "-=", "*=", "+=", "!=", "++", "--", "=="};
 vector<string> keywords = {"char","cout","cin","return","void","int","main", "float", "boolean", "string", "while", "until", "if" ,"else", "true", "false", "continue", "break","double"};
 
 bool isKeyword(string word){
@@ -154,7 +154,7 @@ void tokenize(string inputCode,int i,ofstream& output_file){
 
     if(inputCode[0]=='"'){
         if(isString(inputCode))
-        output_file<<"String literal token, string: "<<inputCode<<" , line number: "<<i+1<<", token id: "<<token_id[inputCode]<<"\n";
+        output_file<<"String_literal token, string: "<<inputCode<<" , line number: "<<i+1<<", token id: "<<token_id[inputCode]<<"\n";
         else
         output_file<<"*** Invalid token, string: "<<inputCode<<" , at line number: "<<i+1<<" ***\n";
         return;
@@ -177,12 +177,12 @@ void tokenize(string inputCode,int i,ofstream& output_file){
             else if(isDelimiter(word))
             output_file<<"Delimiter token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
             else if(isString(word))
-            output_file<<"String literal token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
+            output_file<<"String_literal token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
             else if(isInteger(word)){
                 word= regex_replace(word, regex("^0+"), "");
                 if(word.size()==0)
                 word+="0";
-                output_file<<"Integer literal token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
+                output_file<<"Integer_literal token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
             }
             else if(isFloat(word)){
                 word= regex_replace(word, regex("^0+"), "");
@@ -191,7 +191,7 @@ void tokenize(string inputCode,int i,ofstream& output_file){
                 reverse(word.begin(), word.end());
                 if(word[0]=='.')
                 word="0"+word;
-                output_file<<"Floating point literal token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
+                output_file<<"Floating_point_literal token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";
             }
             else if(isIdentifier(word))
             output_file<<"Identifier token, string: "<<word<<" , line number: "<<i+1<<", token id: "<<token_id[word]<<"\n";

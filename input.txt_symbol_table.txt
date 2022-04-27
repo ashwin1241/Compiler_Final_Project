@@ -1,28 +1,27 @@
 Keywords:
-else : 63
 if : 62
 
 Identifiers:
-asp : 1002
-x : 1000
+t : 1000
+x : 1002
+y : 1004
 
 Operators:
-= : 116
-== : 91
+!= : 95
+= : 115
 
 Integer literals:
-101 : 1003
-5 : 1001
-500 : 1004
+121 : 1003
+4 : 1001
 
 Float literals:
 
 Delimiters:
-( : 105
-) : 106
-; : 109
-{ : 103
-} : 104
+( : 104
+) : 105
+; : 108
+{ : 102
+} : 103
 
 String literals:
 
