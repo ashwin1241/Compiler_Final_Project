@@ -41,10 +41,7 @@ void parsesp(vector<pair<string,string>> code)
 void Ssp()
 {
     parse_stack.pop();
-    parse_stack.push("}");
-    parse_stack.push("code");
-    parse_stack.push("{");
-    parse_stack.push("else");
+    parse_stack.push("ELSE");
     parse_stack.push("}");
     parse_stack.push("code");
     parse_stack.push("{");
@@ -168,9 +165,6 @@ void Ssp()
     if(tokens[ctr].second!="else")
     {
         parse_stack.pop();
-        parse_stack.pop();
-        parse_stack.pop();
-        parse_stack.pop();
         apsp.clear();
         while(!parse_stack.empty())
         {
@@ -184,6 +178,21 @@ void Ssp()
     }
     if(tokens[ctr].second=="else")
     {
+        parse_stack.pop();
+        parse_stack.push("}");
+        parse_stack.push("code");
+        parse_stack.push("{");
+        parse_stack.push("else");
+        apsp.clear();
+        while(!parse_stack.empty())
+        {
+            apsp.push_back(parse_stack.top());
+            cout<<parse_stack.top()<<"|";
+            parse_stack.pop();
+        }
+        cout<<"\n";
+        for(ll i=apsp.size()-1;i>=0;i--)
+            parse_stack.push(apsp[i]);
         parse_stack.pop();
         apsp.clear();
         while(!parse_stack.empty())
@@ -253,10 +262,7 @@ void Ssp()
 void Asp()
 {
     parse_stack.pop();
-    parse_stack.push("}");
-    parse_stack.push("code");
-    parse_stack.push("{");
-    parse_stack.push("else");
+    parse_stack.push("ELSE");
     parse_stack.push("}");
     parse_stack.push("code");
     parse_stack.push("{");
@@ -380,9 +386,6 @@ void Asp()
     if(tokens[ctr].second!="else")
     {
         parse_stack.pop();
-        parse_stack.pop();
-        parse_stack.pop();
-        parse_stack.pop();
         apsp.clear();
         while(!parse_stack.empty())
         {
@@ -396,6 +399,21 @@ void Asp()
     }
     if(tokens[ctr].second=="else")
     {
+        parse_stack.pop();
+        parse_stack.push("}");
+        parse_stack.push("code");
+        parse_stack.push("{");
+        parse_stack.push("else");
+        apsp.clear();
+        while(!parse_stack.empty())
+        {
+            apsp.push_back(parse_stack.top());
+            cout<<parse_stack.top()<<"|";
+            parse_stack.pop();
+        }
+        cout<<"\n";
+        for(ll i=apsp.size()-1;i>=0;i--)
+            parse_stack.push(apsp[i]);
         parse_stack.pop();
         apsp.clear();
         while(!parse_stack.empty())
@@ -520,7 +538,7 @@ void codesp()
     if(tokens[ctr].second=="if")
     {
         parse_stack.push("code");
-        parse_stack.push("A");
+        parse_stack.push("S");
         apsp.clear();
         while(!parse_stack.empty())
         {
@@ -606,8 +624,7 @@ void codesp()
 void EPsp()
 {
     parse_stack.pop();
-    parse_stack.push("EP");
-    parse_stack.push("op");
+    parse_stack.push("CONT");
     parse_stack.push("var");
     vector<string> apsp;
     while(!parse_stack.empty())
@@ -623,7 +640,6 @@ void EPsp()
     varsp();
     if(!isoperatorsp(tokens[ctr].second))
     {
-        parse_stack.pop();
         parse_stack.pop();
         apsp.clear();
         while(!parse_stack.empty())
@@ -641,7 +657,7 @@ void EPsp()
     bool truth = tokens[ctr].first=="Identifier"||tokens[ctr].first=="Integer_literal"||tokens[ctr].first=="Floating_point_literal"||tokens[ctr].first=="String_literal";
     if(truth)
     {
-        if(isoperatorsp(tokens[ctr+1].first))
+        if(isoperatorsp(tokens[ctr+1].second))
             EPsp();
         else
         {
@@ -850,6 +866,19 @@ void opsp()
     vector<string> apsp;
     if(tokens[ctr].second=="+"||tokens[ctr].second=="-"||tokens[ctr].second=="*"||tokens[ctr].second=="/"||tokens[ctr].second=="%")
     {
+        parse_stack.pop();
+        parse_stack.push("EP");
+        parse_stack.push("op");
+        apsp.clear();
+        while(!parse_stack.empty())
+        {
+            apsp.push_back(parse_stack.top());
+            cout<<parse_stack.top()<<"|";
+            parse_stack.pop();
+        }
+        cout<<"\n";
+        for(ll i=apsp.size()-1;i>=0;i--)
+            parse_stack.push(apsp[i]);
         parse_stack.pop();
         parse_stack.push(tokens[ctr].second);
         apsp.clear();

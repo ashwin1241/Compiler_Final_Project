@@ -268,7 +268,7 @@ void EP()
     bool truth = tokens[ctr].first=="Identifier"||tokens[ctr].first=="Integer_literal"||tokens[ctr].first=="Floating_point_literal"||tokens[ctr].first=="String_literal";
     if(truth)
     {
-        if(isoperator(tokens[ctr+1].first))
+        if(isoperator(tokens[ctr+1].second))
             EP();
         else
         {
