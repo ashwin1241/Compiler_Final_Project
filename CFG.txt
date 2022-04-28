@@ -1,11 +1,11 @@
 S    -> if ( BEXP ) { code }  || if ( BEXP ) code else { code }
 A    -> if ( BEXP ) { code }  || if ( BEXP ) code else { code }
 BEXP -> EP comp EP || true || false
-code -> A || A code || EXP || EXP code
+code -> A || A code || EXP || EXP code || e 
 EP   -> var op EP || var
-EXP  -> type vari = EP ;|| vari = EP ;
+EXP  -> type vari = EP ;
 comp -> == || != || <= || >= || < || >
-type -> int || float || double || char || string
+type -> int || float || double || char || string || e
 op   -> + || - || * || / || | || & || ^ || %
 var  -> Identifier || Integer_literal || String_Literal || Float_Literal
 vari -> Identifier

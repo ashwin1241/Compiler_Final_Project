@@ -247,7 +247,7 @@ void code()
         else
             return;
     }
-    if(tokens[ctr].first=="Identifier"||tokens[ctr].first=="Keyword")
+    else if(tokens[ctr].first=="Identifier"||tokens[ctr].first=="Keyword")
     {
         EXP();
         if(tokens[ctr].second!="}")
@@ -255,6 +255,8 @@ void code()
         else
             return;
     }
+    else if(tokens[ctr].second=="}")
+        return;
 }
 
 void EP()

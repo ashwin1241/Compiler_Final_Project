@@ -1,20 +1,14 @@
 Keywords:
 else : 63
 if : 62
-int : 55
 
 Identifiers:
 t : 1000
-x : 1002
 
 Operators:
 != : 95
-= : 115
 
 Integer literals:
-0 : 1003
-121 : 1004
-122 : 1005
 4 : 1001
 
 Float literals:
@@ -22,7 +16,6 @@ Float literals:
 Delimiters:
 ( : 104
 ) : 105
-; : 108
 { : 102
 } : 103
 

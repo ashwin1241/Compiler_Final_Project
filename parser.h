@@ -519,6 +519,7 @@ void codesp()
     vector<string> apsp;
     if(tokens[ctr].second=="if")
     {
+        parse_stack.push("code");
         parse_stack.push("A");
         apsp.clear();
         while(!parse_stack.empty())
@@ -533,7 +534,11 @@ void codesp()
         Asp();
         if(tokens[ctr].second!="}")
         {
-            parse_stack.push("code");
+            codesp();
+        }
+        else
+        {
+            parse_stack.pop();
             apsp.clear();
             while(!parse_stack.empty())
             {
@@ -544,13 +549,12 @@ void codesp()
             cout<<"\n";
             for(ll i=apsp.size()-1;i>=0;i--)
                 parse_stack.push(apsp[i]);
-            codesp();
-        }
-        else
             return;
+        }
     }
-    if(tokens[ctr].first=="Identifier"||tokens[ctr].first=="Keyword")
+    else if(tokens[ctr].first=="Identifier"||tokens[ctr].first=="Keyword")
     {
+        parse_stack.push("code");
         parse_stack.push("EXP");
         apsp.clear();
         while(!parse_stack.empty())
@@ -565,7 +569,11 @@ void codesp()
         EXPsp();
         if(tokens[ctr].second!="}")
         {
-            parse_stack.push("code");
+            codesp();
+        }
+        else
+        {
+            parse_stack.pop();
             apsp.clear();
             while(!parse_stack.empty())
             {
@@ -576,10 +584,22 @@ void codesp()
             cout<<"\n";
             for(ll i=apsp.size()-1;i>=0;i--)
                 parse_stack.push(apsp[i]);
-            codesp();
-        }
-        else
             return;
+        }
+    }
+    else if(tokens[ctr].second=="}")
+    {
+        apsp.clear();
+        while(!parse_stack.empty())
+        {
+            apsp.push_back(parse_stack.top());
+            cout<<parse_stack.top()<<"|";
+            parse_stack.pop();
+        }
+        cout<<"\n";
+        for(ll i=apsp.size()-1;i>=0;i--)
+            parse_stack.push(apsp[i]);
+        return;
     }
 }
 
