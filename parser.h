@@ -549,7 +549,7 @@ void codesp()
         else
             return;
     }
-    if(tokens[ctr].first=="Identifier")
+    if(tokens[ctr].first=="Identifier"||tokens[ctr].first=="Keyword")
     {
         parse_stack.push("EXP");
         apsp.clear();

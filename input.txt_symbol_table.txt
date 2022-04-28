@@ -1,6 +1,7 @@
 Keywords:
 else : 63
 if : 62
+int : 55
 
 Identifiers:
 t : 1000
@@ -11,8 +12,9 @@ Operators:
 = : 115
 
 Integer literals:
-121 : 1003
-122 : 1004
+0 : 1003
+121 : 1004
+122 : 1005
 4 : 1001
 
 Float literals:
