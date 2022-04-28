@@ -1,10 +1,10 @@
 Keywords:
+else : 63
 if : 62
 
 Identifiers:
 t : 1000
 x : 1002
-y : 1004
 
 Operators:
 != : 95
@@ -12,6 +12,7 @@ Operators:
 
 Integer literals:
 121 : 1003
+122 : 1004
 4 : 1001
 
 Float literals:

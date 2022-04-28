@@ -5,10 +5,6 @@ using namespace std;
 
 typedef long long int ll;
 
-vector<pair<string,string>> tokens;
-vector<string> line_no;
-ll ctr=0;
-bool status=false;
 TreeNode* treenode = (TreeNode*)malloc(sizeof(TreeNode));
 
 string extract_line_no(string line)
@@ -422,7 +418,9 @@ int main()
     //BEXP();
     if(status)
     {
-    
+        ctr=0;
+        parse_stack.push("$");
+        parsesp(tokens);
     }
     else
     {
