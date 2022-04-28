@@ -994,6 +994,7 @@ void varisp()
 void errorsp()
 {
     //cout<<"at line number "<<line_no[ctr]<<"\n";
+    parse_stack.pop();
 }
  bool isoperatorsp(string s)
  {
