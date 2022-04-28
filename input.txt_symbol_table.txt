@@ -1,21 +1,27 @@
 Keywords:
 else : 63
 if : 62
+int : 55
+true : 64
 
 Identifiers:
+e : 1006
 t : 1000
-x : 1002
+y : 1002
+z : 1004
 
 Operators:
-!= : 95
 = : 115
+== : 91
 
 Integer literals:
-121 : 1003
-122 : 1004
-4 : 1001
+3 : 1003
+5 : 1001
+77 : 1007
+876 : 1008
 
 Float literals:
+77.876 : 1009
 
 Delimiters:
 ( : 104
@@ -25,4 +31,5 @@ Delimiters:
 } : 103
 
 String literals:
+"hello" : 1005
 

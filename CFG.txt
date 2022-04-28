@@ -1,5 +1,5 @@
 S    -> if ( BEXP ) { code } ELSE 
-ELSE    -> else { code } || e
+ELSE -> else { code } || e
 BEXP -> EP comp EP || true || false
 code -> S code || EXP code || e 
 EP   -> var CONT
