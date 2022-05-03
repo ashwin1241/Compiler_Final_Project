@@ -1,0 +1,11 @@
+Intermediate code:
+100. if t != 5 goto 109
+101. y = 3
+102. if y >= 3 goto 108
+103. t1 = e + x
+104. t2 = d - t1 
+105. t3 = c * t2
+106. t4 = b + t3
+107. a = t4
+108. goto 109
+109.

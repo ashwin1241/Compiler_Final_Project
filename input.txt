@@ -1,17 +1,4 @@
 if(t==5)
 {
-    int y = 3;
-    if(true)
-    {
-        z = "hello";
-    }
-    e = 77.876;
-    if(y==e)
-    {
-        
-    }
-}
-else
-{
-    
+    int = 3;
 }
