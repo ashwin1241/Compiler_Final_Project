@@ -1,16 +1,27 @@
 Keywords:
 if : 62
 int : 55
+true : 64
 
 Identifiers:
+a : 1004
+b : 1005
+c : 1006
+d : 1007
+e : 1008
 t : 1000
+x : 1009
+y : 1002
 
 Operators:
+* : 112
++ : 113
+- : 114
 = : 115
 == : 91
 
 Integer literals:
-3 : 1002
+3 : 1003
 5 : 1001
 
 Float literals:
